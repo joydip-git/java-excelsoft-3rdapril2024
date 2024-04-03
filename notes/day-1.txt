@@ -1,1 +1,42 @@
-1. Java????
+class Person{
+	private int id;
+	private String name;
+	private float salary;
+
+	public Person(){
+		//id=0;
+		//name = null;
+		//salary=0;
+	}
+	public Person(int pid, String pname, float psalary){
+		id=pid;
+		name = pname;
+		salary=psalary;
+	}
+	public string getName(){
+		return name;
+	}
+}
+
+class App{
+	static void main(String[] args){
+		create();
+	}
+	static void create(){
+		//declaring reference variable which can store reference(address) 		//of an object of Person class 
+		Person personRef = null;
+		//personRef = new Person();
+		personRef = new Person(1,"anil",1000);
+		//personRef.name
+		personRef.getName()
+	}
+}
+
+class Array{
+	int _f;
+	int _s;
+	Array(){}
+}
+
+
+
