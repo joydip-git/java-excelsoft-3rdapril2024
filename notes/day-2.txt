@@ -48,7 +48,14 @@ class and file name should be same
 class name should follow pascal casing
 package name and application name and class name should never be same
 class name should be like a noun and singular (EmployeeInfo NOT employees/emp/salary)
-method name should be like verb and gollow camel casing (getData NOT GetData NOT Getdata)
+method name should be like verb and follow camel casing (getData NOT GetData NOT Getdata)
+
+
+basics of Java:
+data types:
+	1. boolean type: boolean (Boolean)
+	2. number types: byte (Byte), short (Short), int (Integer), long (Long), float (Float) and double (Double) [of type Number]
+	3. character data type: char (Character)
 
 
 
