@@ -1,33 +1,24 @@
 package userinterface;
 
 import java.util.Scanner;
-
 import models.Employee;
 
 public final class UiUtility {
-	public static void printEmployeeInfo(Employee[] employees) {
-		for (Employee employee : employees) {
-			if (employee != null)
-				System.out.println("salary of " + employee.getName() + " is " + employee.calculateSalary());
-			else
-				System.out.println("no employee data");
-		}
+	private static Employee[] employees;
+	private static Scanner scanner;
+
+	static {
+		scanner = new Scanner(System.in);
+		employees = new Employee[getEmployeeRecordCount()];
 	}
 
-	public static void saveEmployeeInStorage(Scanner scanner, Employee[] employees) {
-		for (int index = 0; index < employees.length; index++) {
-			Employee employee = createEmployee(scanner);
-			employees[index] = employee;
-		}
-	}
-
-	public static int getEmployeeRecordCount(Scanner scanner) {
+	private static int getEmployeeRecordCount() {
 		System.out.print("how many records? ");
 		int count = scanner.nextInt();
 		return count;
 	}
 
-	private static Employee createEmployee(Scanner scanner) {
+	private static Employee createEmployee() {
 
 		System.out.print("\nid: ");
 		int id = scanner.nextInt();
@@ -53,4 +44,24 @@ public final class UiUtility {
 		return employee;
 	}
 
+	public static void saveEmployeeInStorage() {
+		for (int index = 0; index < employees.length; index++) {
+			Employee employee = createEmployee();
+			employees[index] = employee;
+		}
+	}
+
+	public static void printEmployeeInfo() {
+		for (Employee employee : employees) {
+			if (employee != null)
+				System.out.println("salary of " + employee.getName() + " is " + employee.calculateSalary());
+			else
+				System.out.println("no employee data");
+		}
+	}
+
+	public static void dispose() {
+		if (scanner != null)
+			scanner.close();
+	}
 }
