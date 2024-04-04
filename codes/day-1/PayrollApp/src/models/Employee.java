@@ -1,5 +1,6 @@
 package models;
 
+
 public class Employee {
 	private int id;
 	private String name;
@@ -14,21 +15,21 @@ public class Employee {
 
 	static {
 		organizationName = "excelsoft";
-		System.out.println("static block " + organizationName);
 	}
 
 	public Employee() {
 
 	}
 
+	public Employee(int id) {
+		this.id = id;
+	}
 	public Employee(int id, String name, float basicPayment, float daPayment, float hraPayment) {
 		this.id = id;
 		this.name = name;
 		this.basicPayment = basicPayment;
 		this.daPayment = daPayment;
 		this.hraPayment = hraPayment;
-		// organizationName = organization;
-		System.out.println("ctror called...object created");
 	}
 
 	

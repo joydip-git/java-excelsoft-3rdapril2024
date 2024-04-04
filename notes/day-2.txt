@@ -44,6 +44,13 @@ c. static method: methods can be static too.
 Note: None of the static members of the class can access non-static (instance) members of the class, whereas instance members can access the static members.
 
 
+class and file name should be same
+class name should follow pascal casing
+package name and application name and class name should never be same
+class name should be like a noun and singular (EmployeeInfo NOT employees/emp/salary)
+method name should be like verb and gollow camel casing (getData NOT GetData NOT Getdata)
+
+
 
 	
 
