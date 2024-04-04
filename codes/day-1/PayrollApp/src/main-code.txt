@@ -1,0 +1,23 @@
+Employee anilEmployeeRef = null;
+		anilEmployeeRef = new Employee(1, "anil", 1000, 2000, 3000);
+
+		Class employeeClsInfo = anilEmployeeRef.getClass();
+		System.out.println(employeeClsInfo.getName());
+
+		System.out.println(employeeClsInfo.getClass().getName());
+
+		Employee sunilEmployeeRef = null;
+		sunilEmployeeRef = new Employee(2, "sunil", 1000, 2000, 3000);
+		// sunilEmployeeRef = anilEmployeeRef;
+
+		// System.out.println(Employee.organizationName);
+
+		Employee[] employees = new Employee[2];
+		employees[0] = anilEmployeeRef;
+		employees[1] = sunilEmployeeRef;
+		for (Employee emp : employees) {
+			if (emp == null)
+				System.out.println("NULL");
+			else
+				System.out.println("Name: " + emp.getName() + " got salary: " + emp.calculateSalary());
+		}

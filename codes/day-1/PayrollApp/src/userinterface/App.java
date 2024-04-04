@@ -5,11 +5,11 @@ import models.Employee;
 public class App {
 
 	public static void main(String[] args) {
-		Employee anilEmployeeRef = new Employee(1, "anil", 1000, 2000, 3000);
-		Employee[] employees = new Employee[2];
-		employees[0] = anilEmployeeRef;
-		float anilSalary = anilEmployeeRef.calculateSalary();
-		System.out.println(anilSalary);
-	}
 
+		//ask user to enter how many objects to create
+		//create an array of that size to store employee object references
+		//use for loop to create as many objects (accept values from user and create an employee object with those values)
+		//save the object reference in the array
+		//iterate through the array, pick up every employee object reference and print his/her name along with calculated salary
+	}
 }

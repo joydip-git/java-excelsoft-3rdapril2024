@@ -1,0 +1,55 @@
+Day-1 revision:
+	1. Java 
+	2. JVM, JRE, JDK etc.
+	3. Basics:
+		a. data types - primitive and non-primitive 
+		b. operators
+			i. arithmatic (+, -, *. /, %)
+			ii. logical (|| and && and !)
+			iii. relational (>,<,>=,<=, !=, ==)
+			iv. assignment (+=, -=, *=, /=, =)
+			v. incremental and decremental (++, --)
+			vi. bitiwise
+			etc.
+		c. control flow statements:
+			if..else, while, do..while, switch...case, for, 
+			foreach => for (variable:iterable-data-source){}
+	4. arrays:
+		i. create an array object
+		ii. store values in the array object (index positions)
+			a. primitive type values (directly stored in index positions of the array)
+			b. reference type data (references, NOT the actual objects, are directly stored in index positions of the array)
+	5. OOP:
+		a. class
+		b. class members: data (fields) and methods (including constructor)
+		c. constructor: default and parameterized
+		note:
+			i. a special method in the class with same name as that of the class
+			ii. ctors do not have any return type (don't mention even)
+			iii. its is invoked DURING (not before or after) object creation		
+			iv. its job is to assign default or user values to the data members		
+		d. object: class-name var-name = new class-name-ctor([optional values])
+		e. access specifiers: public and private
+		f. data abstraction: hiding the data members
+		g. encapsulation
+		h. implementation abstraction
+
+day-2 discussion:
+a. static data: declare a data member of a class with "static" keyword, to make that data member, a shared data member. memory block for this data member will be allocated separately in heap, not part of any object. But every object will have access to it. you can access the static data using the name of the class. also, within class code, do not access the static data member with "this" keyword.
+
+b. static block: a block where only static data members are assigned with values. Instance members are not allowed inside this block. this static block is executed ONLY ONCE, when the very first instance of the class is created or you access any static member of the class. you can't call it explicitly (such as, like ctor), will be called implicitly by runtime.
+
+c. static method: methods can be static too. 
+
+Note: None of the static members of the class can access non-static (instance) members of the class, whereas instance members can access the static members.
+
+
+
+	
+
+
+
+
+
+
+			
