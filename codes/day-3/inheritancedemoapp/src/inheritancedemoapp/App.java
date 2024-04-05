@@ -20,10 +20,10 @@ class SavingsAccount extends Account{
 	public SavingsAccount() {
 		
 	}
+	//from the parameterized ctor, can we call parameterized ctor of the 
+	//base class????
 	public SavingsAccount(int id, String name, double currentBalance, double interestRate) {
-		this.id= id;
-		this.name = name;
-		this.currentBalance = currentBalance;
+		super(name, id, currentBalance);
 		this.savingsInterestRate = interestRate;
 	}
 }
