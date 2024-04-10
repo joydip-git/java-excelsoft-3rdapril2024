@@ -6,22 +6,23 @@ public class App {
 		Product dellProduct = new Product(1, "dell xps 15", 120000);
 		Product hpProduct = new Product(2, "hp probook", 110000);
 
-		//Object=> boolean equal(Object obj)
-		//if (dellProduct.equals(hpProduct)) {	
-		
-		//Objects => static boolean equals(Object a, Object b){
-		// if( (a==b) || (a!=null && a.equals(b)))
-		//}
-		if (Objects.equals(dellProduct, hpProduct)) {				
+		// Object class's "equals" method
+		// boolean equals(Object obj)
+		if (dellProduct.equals(hpProduct)) {
 			System.out.println("same");
 		} else
 			System.out.println("not same");
-//		int x = 20;
-//		int y = 20;
-//		if (Objects.equals(x, y)) {
-//			System.out.println("same");
-//		} else
-//			System.out.println("not same");
-	}
 
+		// Objects => utility class
+		// static boolean equals(Object a, Object b)
+
+		if (Objects.equals(dellProduct, hpProduct)) {
+			// if(dellProduct == hpProduct) return true;
+			// if(dellProduct.equals(hpProduct)) return true; else return false;
+
+			System.out.println("same");
+		} else
+			System.out.println("not same");
+
+	}
 }

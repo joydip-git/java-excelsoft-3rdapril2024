@@ -24,6 +24,18 @@ public class Professor extends Person {
 		return booksPublished >= 4;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (!super.equals(obj))
+			return false;
+
+		Professor other = (Professor) obj;
+		if (this.booksPublished != other.booksPublished)
+			return false;
+
+		return true;
+	}
+
 	public String print() {
 		return "Name: " + getName() + ", Books Published: " + booksPublished;
 	}

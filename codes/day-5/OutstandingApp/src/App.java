@@ -66,15 +66,23 @@ public class App {
 	}
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int count = getCount(scanner);
 
-		Person[] people = new Person[count];
-		savePeopleInStorage(people, scanner);
+		Professor anilProf = new Professor("anil", 5);
+		Professor sunilProf = new Professor("anil", 5);
+		if(anilProf.equals(sunilProf))
+			System.out.println("same");
+		else
+			System.out.println("not same");
 
-		printOutstandingPeople(people);
-
-		scanner.close();
+		/*
+		 * Scanner scanner = new Scanner(System.in); int count = getCount(scanner);
+		 * 
+		 * Person[] people = new Person[count]; savePeopleInStorage(people, scanner);
+		 * 
+		 * printOutstandingPeople(people);
+		 * 
+		 * scanner.close();
+		 */
 	}
 
 }

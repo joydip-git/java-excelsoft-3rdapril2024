@@ -59,4 +59,13 @@ choose abstract class as base type where your child classes do have common data 
 choose interface as base type where your child classes do have common functionalities 
 
 
+Object class's equals method:
+
+Object => boolean equals(Object obj)
+
+Person => @Override public boolean equals(Object obj)
+
+Student and Professor => @Override public boolean equals(Object obj)
+
+
 

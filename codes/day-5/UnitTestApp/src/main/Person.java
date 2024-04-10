@@ -1,7 +1,9 @@
-public abstract class Person {
+package main;
+
+public class Person {
 	private String name;
 
-	public Person() {		
+	public Person() {
 	}
 
 	public Person(String name) {
@@ -15,18 +17,18 @@ public abstract class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public abstract boolean isOutstanding();
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if(this == obj)
 			return true;
 		
 		Person other = (Person)obj;
 		if(!this.name.equals(other.name))
 			return false;
 		
-		return true;
-	}	
+		return true;		
+	}
+	
+	
 }

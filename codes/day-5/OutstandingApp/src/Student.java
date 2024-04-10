@@ -24,6 +24,19 @@ public class Student extends Person {
 		return marks >= 85 ? true : false;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(!super.equals(obj))
+			return false;
+
+		Student other = (Student)obj;
+		if (this.marks != other.marks)
+			return false;
+		
+		return true;
+	}
+
 	public String display() {
 		return "Name: " + getName() + ", Marks: " + marks;
 	}
