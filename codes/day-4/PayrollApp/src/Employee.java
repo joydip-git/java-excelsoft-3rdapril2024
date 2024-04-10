@@ -1,4 +1,3 @@
-
 public class Employee {
 
 	// data members (fields)
@@ -10,11 +9,9 @@ public class Employee {
 
 	// constructors
 	public Employee() {
-		super();
 	}
 
 	public Employee(int id, String name, double basicPayment, double daPayment, double hraPayment) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.basicPayment = basicPayment;
@@ -59,7 +56,7 @@ public class Employee {
 		return id;
 	}
 
-	//method
+	// method
 	public double calculateSalary() {
 		return basicPayment + daPayment + hraPayment;
 	}

@@ -1,4 +1,3 @@
-
 public class Hr extends Employee {
 	//data members
 	private double gratuityPayment;

@@ -1,6 +1,6 @@
 
 public class Developer extends Employee {
-// data members
+	// data members
 	private double incentivePayment;
 
 	// constructors
