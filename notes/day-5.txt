@@ -1,0 +1,62 @@
+abstract class:
+	a. a class with at least one abstract method/getter-setter
+	b. you must declare the method/getter-setter with abstract keyword
+	c. you must declare the class with abstract keyword
+	d. you can't instantiate the abstract class
+	e. if any class inherits from the abstract base class, MUST implement all the abstract members (otherwise the child class becomes abstract)
+	f. you can't extend more than one abstract class in a child class
+
+abstract class DataReader{
+	private string path;
+
+	public DataReader(){}
+	public DataReader(String path){ this.path = path; }
+
+	public void setPath(string path){ this.path = path; }
+	public String getPath(){ return this.path; }
+
+	public abstract String getData();
+
+}
+class DbDataReader extends DataReader{
+	public DbDataReader(){}
+	public DbDataReader(String path){ super(path); }
+	
+	@Override
+	public String getData(){ return "db data"; }
+
+
+}
+
+interface:
+
+	a. a pure abstract class with all abstract members: method/getter-setter
+	b. you need not declare the method/getter-setter with abstract keyword (by default asbstract)
+	c. you can't instantiate the interface
+	d. you can't have data members (except final), explicit constructors and non-abstract methods in interface
+	e. if any class implements the interface, the child class MUST implement all the abstract members (otherwise the child class becomes abstract)
+	f. you can implement more than one interface in a class
+
+interface DbOperation{
+	void openConnection();
+	void closeConnection();
+}
+class OracleDb implements DbOperation{
+	@Override
+	public void openConnection(){}
+	@Override
+	public void closeConnection(){}
+}
+class MySqlDb implements DbOperation{
+	@Override
+	public void openConnection(){}
+	@Override
+	public void closeConnection(){}
+}
+
+when should we use abstract class and interface?
+choose abstract class as base type where your child classes do have common data and functionalities 
+choose interface as base type where your child classes do have common functionalities 
+
+
+
