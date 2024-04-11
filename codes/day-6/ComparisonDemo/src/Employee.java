@@ -1,5 +1,5 @@
 
-public class Employee implements Comparable {
+public class Employee implements Comparable<Employee> {
 	private int id;
 	private String name;
 
@@ -28,14 +28,21 @@ public class Employee implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		if (this == o)
+	public int compareTo(Employee other) {
+		if (this == other)
 			return 0;
-		
-		Employee other = (Employee) o;
+
 		if (Integer.compare(this.id, other.id) == 0)
 			return this.name.compareTo(other.name);
 		else
 			return Integer.compare(this.id, other.id);
 	}
+
+	/*
+	 * @Override public int compareTo(Object o) { if (this == o) return 0;
+	 * 
+	 * Employee other = (Employee) o; if (Integer.compare(this.id, other.id) == 0)
+	 * return this.name.compareTo(other.name); else return Integer.compare(this.id,
+	 * other.id); }
+	 */
 }

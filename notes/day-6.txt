@@ -8,7 +8,7 @@ Note: if compreTo() method returns
 	ii. <0 => first item is less than second item
 
 usage: 
-a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using "sorted()" method
+a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using "sort()" method
 b. while doing bubble sorting manually, you can use this method to compare between two elements before sorting the elements in the collection 
 
 B. comapartor interface:[externalization of comparison => the logic for comparison between two items of similar type is written outside that type inside another type]
@@ -20,11 +20,17 @@ Note: if compre() method returns
 	ii. <0 => first item is less than second item
 
 usage: 
-a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using overloaded version of "sorted(Comparator comp)" method
+a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using overloaded version of "sort(Comparator comp)" method
 b. while doing bubble sorting manually, you can use this method to compare between two elements before sorting the elements in the collection 
 
 choice based comparison:
 	Comparator interface is bset for that (2nd technique).
+
+R => Return Type
+E => Element
+T => Type
+K => Key
+V => Value
 
 
 

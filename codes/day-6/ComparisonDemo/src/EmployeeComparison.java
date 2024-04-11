@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class EmployeeComparison implements Comparator {
+public class EmployeeComparison implements Comparator<Employee> {
 
 	private int choice;
 
@@ -11,6 +11,29 @@ public class EmployeeComparison implements Comparator {
 		this.choice = choice;
 	}
 
+	@Override
+	public int compare(Employee first, Employee next) {
+		if (first == next)
+			return 0;
+		
+		int compResult = 0;
+		switch (choice) {
+		case 1:
+			compResult = Integer.compare(o.getId(), next.getId());
+			break;
+
+		case 2:
+			compResult = first.getName().compareTo(next.getName());
+			break;
+
+		default:
+			compResult = Integer.compare(first.getId(), next.getId());
+			break;
+		}
+		return compResult;
+	}
+
+	/*
 	@Override
 	public int compare(Object o1, Object o2) {
 		if (o1 == o2)
@@ -40,5 +63,6 @@ public class EmployeeComparison implements Comparator {
 		}
 		return compResult;
 	}
+	*/
 
 }
