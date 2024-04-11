@@ -44,4 +44,11 @@ public class Book implements Comparable<Book> {
 
 		return this.getTitle().compareTo(o.getTitle());
 	}
+
+	@Override
+	public String toString() {		
+		return "Title: " + title + ", Author: " + authorName + ", Price: " + price;
+//		return this.getClass().getName()+"@"+this.hashCode();
+	}	
+
 }
