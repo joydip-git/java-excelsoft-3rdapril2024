@@ -1,0 +1,30 @@
+comparison between two non-primitive type (reference type) items:
+A. comparable interface: [internalization of comparison => the logic for comparison between two items of similar type is written inside that type itself]
+	1. implement Comparable interface from java.lang package in the class
+	2. implement the "int compareTo(Object obj)" method of the interface
+Note: if compreTo() method returns
+	i.   0 => two items are same
+	ii. >0 => first item is greater than second item
+	ii. <0 => first item is less than second item
+
+usage: 
+a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using "sorted()" method
+b. while doing bubble sorting manually, you can use this method to compare between two elements before sorting the elements in the collection 
+
+B. comapartor interface:[externalization of comparison => the logic for comparison between two items of similar type is written outside that type inside another type]
+	1. implement Comparator interface from java.util package in a separate class
+	2. implement the "int compare(Object o1, Object o2)" method of the interface
+Note: if compre() method returns
+	i.   0 => two items are same
+	ii. >0 => first item is greater than second item
+	ii. <0 => first item is less than second item
+
+usage: 
+a. ArrayList class demands that you implement this interface when you try to sort all items in ArrayList using overloaded version of "sorted(Comparator comp)" method
+b. while doing bubble sorting manually, you can use this method to compare between two elements before sorting the elements in the collection 
+
+choice based comparison:
+	Comparator interface is bset for that (2nd technique).
+
+
+
