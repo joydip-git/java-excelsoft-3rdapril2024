@@ -1,0 +1,17 @@
+JDBC: Java DataBase Connectivity
+set of APIs provided by Java to interact with any database: Oracle, MySql, Sql Server, No-Sql db
+
+interface:
+-----------------
+Connection
+Statement, PreparedStatement, CallableStatement
+ResultSet
+
+classes:
+----------------------
+DriverManager
+
+
+com.mysql.cj.jdbc.Driver
+
+jdbc:mysql://localhost:3306/testdb
