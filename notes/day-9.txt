@@ -77,6 +77,25 @@ java.util.function
 	- BiFunction
 
 
+Roadmap:
+	A. Nested Class: 
+		a. nested static class
+		a. non-static nested class (Inner class)
+			i. anonymous class (*)
+			ii. local class
+	(*) Anonymous class in abstract class and interface
+	OuterInterface/Class obj = new OuterInterface/Class(){
+
+		//implemnent (override) the abstract method of abstract class or interface
+	};
+	B. Functional Interface
+	C. Lambda and Method Reference
+	D. functional programming
+	E. stream api
+
+		
+
+
 
 
 
