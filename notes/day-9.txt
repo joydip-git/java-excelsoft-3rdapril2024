@@ -68,6 +68,14 @@ class A{
 	return type: int
 	argument: two, both of type int
 
+functional interfaces in Java
+java.util.function
+	- Function
+	- Predicate
+	- Consumer
+	- BiConsumer
+	- BiFunction
+
 
 
 
