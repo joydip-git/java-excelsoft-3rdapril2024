@@ -50,6 +50,27 @@ class A{
 	}
 }
 
+1. Create a Java project: functionalinterfacedemo
+2. add a new interface file: PrintLogic.java
+   interface: PrintLogic
+3. create an abstract method
+	return type: void
+	argument: One, of type String
+
+4. create an anonymous class implementing that abstract method
+5. after main method, create one more static method with return type void and accepts two arguments of type "PrintLogic" interface and of type String
+6. from this method, use the argument variable of interface to call the interface method and pass the second argument to that method
+7. from main method call this new static method and pass two arguments: the interface variable in the main method and a string value
+
+2. add a new interface file: CalculationLogic.java
+   interface: CalculationLogic
+3. create an abstract method
+	return type: int
+	argument: two, both of type int
+
+
+
+
 
 
 
