@@ -1,0 +1,58 @@
+1. Java Inner class
+2. Reflection
+3. Functional Interface
+4. Method Reference
+5. Lambda expression and stream() API
+
+6. Spring
+7. IOC and DI in Spring
+8. SpringBoot
+9. Hibernate
+
+10. React JS
+
+Class within a class
+
+
+
+HashMap => HashSet
+
+
+class HashMap<TKey,TValue>{
+	class Entry<TKey,TValue>{
+	}
+	private HashSet<Entry<TKey,TValue>> entries;
+	public void put(TKey key, TValue value){
+		//creates an entry
+		//adds the entry in the collection of entries
+	}
+	public HashSet<Entry<TKey,TValue>> entrySet(){
+	}
+}
+
+Map<Integer, String> map = new HashMap<Integer, String>();
+map.put(1,"mysore");
+
+HashSet<Entry<Integer,String>> entries = map.entrySet();
+
+Class within a class => nested class
+a. non-static nested class: Inner class
+class A{
+	class B{
+	}
+}
+
+Anonymous Class:
+
+b. static nested class
+class A{
+	static class B{
+	}
+}
+
+
+
+
+
+
+
