@@ -9,4 +9,43 @@
 	https://www.springframework.org/schema/context/spring-context.xsd
 	">
 
+	<bean id="anilAddress"
+		class="com.springapps.springcoreapp.Address">
+		<constructor-arg value="Bangalore" type="String"
+			name="city" />
+		<constructor-arg value="KA" type="String" name="state" />
+	</bean>
+
+	<bean id="anilStdBean"
+		class="com.springapps.springcoreapp.Student">
+		<constructor-arg name="id" type="int" value="1" />
+		<constructor-arg name="name" type="String"
+			value="anil" />
+		<constructor-arg name="address" ref="anilAddress" />
+	</bean>
+
+	<bean id="sunilAddress"
+		class="com.springapps.springcoreapp.Address">
+		<property name="city" value="Mysore" />
+		<property name="state" value="KA" />
+	</bean>
+
+	<bean id="sunilStdBean"
+		class="com.springapps.springcoreapp.Student">
+		<property name="name" value="Sunil" />
+		<property name="id" value="2" />
+		<property name="address" ref="sunilAddress" />
+	</bean>
+
+
+	<bean id="stdList"
+		class="com.springapps.springcoreapp.StudentList">
+		<constructor-arg name="students">		
+			<list>
+				<ref bean="anilStdBean" />
+				<ref bean="sunilStdBean" />
+			</list>
+		</constructor-arg>
+	</bean>
+
 </beans>

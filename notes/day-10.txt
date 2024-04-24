@@ -8,6 +8,10 @@ Bean => objects
 2. Annotation
 3. Java configuration
 
+IoC containers for spring:
+a. BeanFactory
+b. ApplicationContext => beans, AOP, Java Messaging Service (JMS)
+
 
 class App{
 	main(){
@@ -24,6 +28,10 @@ Class ProductBo implements Bo{
 		this._dao = dao;
 	}
 
+	public void setDao(Dao dao){
+		this._dao = dao;
+	}
+
 	public List<?> getAll(){
 		this._dao.fetchAll();
 	}
@@ -31,8 +39,3 @@ Class ProductBo implements Bo{
 
 class ProductDAO implements Dao{
 }
-
-
-
-
-
