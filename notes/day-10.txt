@@ -1,0 +1,38 @@
+IoC => Inversion of Control
+DI => Dependency Injection
+
+Container => a container of beans
+Bean => objects
+
+1. XML configuration file
+2. Annotation
+3. Java configuration
+
+
+class App{
+	main(){
+		Dao dao = tell spring to create Dao instance and share it
+		Bo bo = tell spring to create Bo instance and share it
+
+	}
+}
+
+Class ProductBo implements Bo{
+	
+	private Dao _dao;
+	public ProductBo(Dao dao){
+		this._dao = dao;
+	}
+
+	public List<?> getAll(){
+		this._dao.fetchAll();
+	}
+}
+
+class ProductDAO implements Dao{
+}
+
+
+
+
+
