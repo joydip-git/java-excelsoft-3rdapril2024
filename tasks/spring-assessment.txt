@@ -1,0 +1,44 @@
+
+Dto: Employee
+
+interface
+DaoContract => List<T> getRecords()
+
+class:
+EmployeeDao implements DaoContract<Employee>
+@Override 
+public List<Employee> getRecords(){}
+
+interface:
+BoContract => 
+List<T> fecthRecords(String name)
+List<T> fecthRecords(float salary)
+
+class:
+EmployeeBo implements BoContract<Employee>
+@Override 
+public List<Employee> fetchRecords(String name){
+	//call dao layer getRecords() method
+	//after getting records, filter those records by name (name argument must be a substring in the actual name)
+	//return the filtered records
+
+}
+@Override 
+public List<Employee> fetchRecords(float salary){
+	//call dao layer getRecords() method
+	//after getting records, filter those records by salary (whete the employee's salary is greater than the 'salary' argument value
+	//return the filtered records
+}
+
+class:
+EmployeeController
+	- getDataFilteredByName(String name)
+		call BO layer's method fetchRecords(String name) and returns the returned data
+	- getDataFilteredBySalary(float salary)
+		call BO layer's method fetchRecords(float salary) and returns the returned data
+
+App
+	main
+
+
+
