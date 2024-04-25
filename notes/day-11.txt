@@ -1,0 +1,27 @@
+Spring Beans => POJO (Plain Old Java Object)
+Spring Conrainer => BeanFactory and ApplicationContext
+
+Bean Configuration:
+	1. configuration through XML file
+	2. configuration using anotation
+		
+		a. annotation config => @Autowired
+		XML file: 
+		<context:annotation-config />
+		<!-- bean configurations-->
+		<bean id="" class =""/>
+
+		b. component scanning => @Autowired, @Component, @Reposiroty etc.
+		XML file: 
+		<context:component-scan />		
+
+
+	.
+	3. Java code based configuration (No xml file will be used)
+	@Configuration: Indicates that a class declares one or more Bean methods and
+may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime
+	@Bean: use it with methods of this class	
+
+
+
+

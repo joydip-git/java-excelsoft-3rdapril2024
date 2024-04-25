@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class App {
 	public static void main(String[] args) {
 		try {
-			ApplicationContext iocContainer = new ClassPathXmlApplicationContext("beans-config.xml");
+			ApplicationContext iocContainer = new ClassPathXmlApplicationContext("com/springapps/springcoreapp/beans-config.xml");
 			Student student = (Student) iocContainer.getBean("sunilStdBean");
 			System.out.println(student.getName() + " " + student.getId() + " " + student.getAddress().getCity());
 
