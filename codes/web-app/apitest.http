@@ -1,0 +1,11 @@
+POST http://localhost:8001/employees/add
+Content-Type: application/json
+
+{
+    "id":4,
+    "name":"vinod",
+    "salary":4000
+}
+
+###
+GET http://localhost:8001/employees/view/1
