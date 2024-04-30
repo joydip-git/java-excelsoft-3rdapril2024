@@ -1,9 +1,9 @@
 package com.restapi.sample.models.dto;
 
 public class Employee {
-	private int id;
-	private String name;
-	private double salary;
+	private int id = 0;
+	private String name = "";
+	private double salary = 0;
 
 	public Employee() {
 	}

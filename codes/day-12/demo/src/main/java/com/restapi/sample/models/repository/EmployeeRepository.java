@@ -160,7 +160,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 		try {
 			connection = DbUtility.createConnection();
 			statement = connection.prepareStatement("delete from employees where id=?;");
-			statement.setInt(3, id);
+			statement.setInt(1, id);
 			return statement.executeUpdate();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
