@@ -1,4 +1,4 @@
-package com.restapi.sample.models;
+package com.restapi.sample.models.dto;
 
 public class Employee {
 	private int id;
