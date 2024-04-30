@@ -8,9 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.restapi.sample.models.dto.Employee;
 import com.restapi.sample.utility.DbUtility;
 
+@Repository
 public class EmployeeRepository implements RepositoryContract<Employee, Integer> {
 
 	@Override
