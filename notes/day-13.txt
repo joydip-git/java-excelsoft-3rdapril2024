@@ -1,0 +1,27 @@
+1. React JS - a JavaScript Library
+2. It is a SPA
+3. can create reusable components using React JS
+4. React JS is a client-side UI development technique
+
+Node JS: C:/Program Files/nodejs
+JS runtime
+server-side framework
+used to create mainly backend applications, like RESTful API
+
+component: design (view) + code
+
+React Libraries: react and react-dom
+
+tool to create react app: create-react-app
+npm (Node Package Manager) or yarn
+>npm i/install create-react-app --location=global
+
+any package installed globally in your machine using the following command:
+npm i package-name --location=global
+will be present at the following path:
+C:\Users\<user-name-dir>\AppData\Roaming\npm
+ex: C:\Users\ghosh\AppData\Roaming\npm
+
+
+
+
