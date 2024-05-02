@@ -1,11 +1,15 @@
 import './AppHeader.css'
-export function AppHeader() {
-    const headerMessage = 'Welcome to React JS'
-
+export function AppHeader(props) {
+    // const headerMessage = 'Welcome to React JS'
+    //props.message = 'new message'
     const headerDesign = (
-        <h2>
-            {headerMessage}
-        </h2>
+        <div>
+            <h2>
+                {props.message}
+            </h2>
+            <br />
+            <button type='button' onClick={props.showHandler}>Show</button>
+        </div>
     )
 
     return headerDesign

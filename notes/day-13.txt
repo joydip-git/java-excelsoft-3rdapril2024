@@ -22,6 +22,22 @@ will be present at the following path:
 C:\Users\<user-name-dir>\AppData\Roaming\npm
 ex: C:\Users\ghosh\AppData\Roaming\npm
 
+name: calculator-app
+component: Calculator
+
+in order to pass data and method from parent to child, use some attribute/property with the child component and "bind" the data or method to those properties
+
+Note: the property object (the object containing properties and data/method that is passed from parent to child), is READ ONLY, do not any property value in the child. That will crash the application
+<AppHeader message={headerMessage} showHandler={show} />
+
+property object => { message:headerMessage, showHandler:show}
+AppHeader({ message:headerMessage, showHandler:show})
+
+export function AppHeader(props) [props={ message:headerMessage, showHandler:show}]
+{
+	props.message or props.showHandler
+}
+
 
 
 
