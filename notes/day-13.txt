@@ -27,7 +27,8 @@ component: Calculator
 
 in order to pass data and method from parent to child, use some attribute/property with the child component and "bind" the data or method to those properties
 
-Note: the property object (the object containing properties and data/method that is passed from parent to child), is READ ONLY, do not any property value in the child. That will crash the application
+Note: the property object (the object containing properties and data/method that is passed from parent to child), is READ ONLY, do not mutate/change any property value in the child. That will crash the application.
+
 <AppHeader message={headerMessage} showHandler={show} />
 
 property object => { message:headerMessage, showHandler:show}
@@ -97,6 +98,37 @@ import {Fragment} from 'react'
 	...
 	...
 </Fragment>
+
+<>
+	..
+	..
+</>
+
+prop-types:
+>npm i prop-types
+
+1. helps you pre-define component properties and their data types
+2. provides runtime type-checking:
+	it checks whether you have used exactly same properties of the components to pass data or not
+	it checks whether you have passed data of required data type via those  properties of the components or not
+
+how to stop unnecessary rendering of any functional component?
+use memo() function from react package
+known as HOC (Higher Order Component)
+
+call this function to pass a functional component so that we can stop unnecessary rendering of that functional component if it does not receive any fresh property data
+
+//pure function
+function memo(C){
+	returns a wrapped C
+}
+
+function (a,b){
+	return a+b
+}
+
+
+
 
 
 

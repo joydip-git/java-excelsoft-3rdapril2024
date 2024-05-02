@@ -1,9 +1,11 @@
 import { Component, Fragment } from "react";
+import Name from "../name/Name";
+import Value from "../value/Value";
 class Parent extends Component {
 
     state = {
         name: '',
-        data: 0
+        data: -1
     }
 
     nameHandler = (newName) => {
@@ -24,25 +26,13 @@ class Parent extends Component {
         // })
     }
     render() {
+        console.log('Parent (re)rendered')
         const design = (
             /* <Fragment> */
             <>
-                <div>
-                    <label htmlFor="txtName">Name:</label>
-                    <input type='text' id='txtName' value={this.state.name} onChange={
-                        (eventObject) => {
-                            const data = eventObject.target.value
-                            this.nameHandler(data)
-                        }
-                    } />
-                </div>
-                <div>
-                    <span>
-                        Data: &nbsp; {this.state.data}
-                    </span>
-                    <br />
-                    <button onClick={this.dataHandler}>Increase</button>
-                </div>
+                <Name nameValue={this.state.name} nameUpdater={this.nameHandler} />
+                <br />
+                <Value dataValue={this.state.data} dataUpdater={this.dataHandler} />
             </>
             /* </Fragment> */
         )
