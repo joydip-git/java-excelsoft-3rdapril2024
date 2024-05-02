@@ -38,6 +38,60 @@ export function AppHeader(props) [props={ message:headerMessage, showHandler:sho
 	props.message or props.showHandler
 }
 
+<div>
+	<Calculator />
+</div>
+
+whenever an event is fired and an attached (bound) function is called, React JS, passes an event object to that function automatically
+  - target (which control fired that event)
+  - event name
+
+components in React:
+a. functional component => function Comp(){ return <div></div> }
+b. class component
+
+any type of component MUST return a REACT ELEMENT/Node
+
+ 
+ 
+
+functional component: Just a function which MUST return a React element or node
+React JS calls the functional component and gets back the React element or node
+example: <Calculator /> -> Calculator() -> RE
+
+Class component: a class which extends base class Component from 'react' package
+class component will have render() method (inherited from Component class and overriden in the child) which must return a React Element or Node
+React JS creates an object of the class component first and then calls its render() method to get back the React Element or Node
+example: 
+<Sample /> -> 
+	const sampleComponentObject = new Sample()
+	sampleComponentObject.render() -> RE
+
+State property of class component:
+	inherited from base class Component
+	assign an object to it (ONLY object, NOT string, Boolean, array, number etc.)
+	state property should contain key value pairs for data
+	React JS keeps track of the key value pairs of the state object of a class component
+	If value of any property (key) is updated immediately the class component's render() method is recalled, producing new version of the component's React element or node, which react will use to update the actual DOM (already displayed in the browser the very first time React application was run)
+	Access the properties of the state object using this.state.propertyName syntax (this -> refers to the class component object)
+	
+state update:
+DO NOT MUTATE state properties directly
+use setState() method of the base class Component
+pass an object with properties that you want to update to the setState() method as an argument
+setState() method will asynchronously update the state property of the class component and then immediately calls the render method to re-create the next version of the React Element or node, which updates the existing actual DOM 
+
+
+
+spread operator: (...) to copy an object or an array etc.
+const anilObj = {name:'anil', id:1}
+const copy={...anilObj}
+
+const numbers = [1,2,3,4]
+const copyArr = [...numbers]
+
+
+
 
 
 
