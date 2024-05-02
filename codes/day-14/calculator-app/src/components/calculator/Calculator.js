@@ -1,59 +1,69 @@
-function Calculator() {
+import { Component } from "react"
 
-    //code
-    //1. data
-    let first = 0
-    let second = 0
-    let result = 0
+class Calculator extends Component {
 
-    //2. methods
-    const updateFirst = (value) => {
-        console.log(value)
-        first = value
-        console.log(first)
-    }
-    const updateSecond = (value) => {
-        console.log(value)
-        second = value
-        console.log(second)
+    //1. data in state
+    state = {
+        first: 0,
+        second: 0,
+        result: 0
     }
 
-    const calculate = () => {
-        result = Number(first) + Number(second)
-        console.log(result)
+    //2. methods in the class which update the state
+    updateFirst = (value) => {
+        this.setState({
+            first: value
+        })
+    }
+    updateSecond = (value) => {
+        this.setState({ second: value })
+    }
+
+    calculate = () => {
+        this.setState(
+            (currentState) => {
+                return {
+                    result: currentState.first + currentState.second
+                }
+            }
+        )
     }
 
     //design or view
-    const design = (
-        <form>
-            <div>
-                <label htmlFor="txtFirst">First Value: &nbsp; </label>
-                <input type="text" id="txtFirst" value={first} onChange={
-                    (eventObject) => {
-                        const data = eventObject.target.value
-                        updateFirst(data)
-                    }
-                } />
-            </div>
-            <div>
-                <label htmlFor="txtSecond">Second Value: &nbsp; </label>
-                <input type="text" id="txtSecond" value={second} onChange={
-                    (eventObject) => {
-                        const data = eventObject.target.value
-                        updateSecond(data)
-                    }
-                } />
-            </div>
-            <div>
-                <button type="button" onClick={calculate}>Add</button>
-            </div>
-            <div>
-                <label htmlFor="txtResult">Result: &nbsp; </label>
-                <input type="text" id="txtResult" readOnly value={result} />
-            </div>
-        </form>
-    )
-    return design
+    render() {
+        const design = (
+            <form>
+                <div>
+                    <label htmlFor="txtFirst">First Value: &nbsp; </label>
+                    <input type="text" id="txtFirst" value={this.state.first} onChange={
+                        (eventObject) => {
+                            const data = eventObject.target.value
+                            if (data !== '')
+                                this.updateFirst(Number(data))
+                        }
+                    } />
+                </div>
+                <div>
+                    <label htmlFor="txtSecond">Second Value: &nbsp; </label>
+                    <input type="text" id="txtSecond" value={this.state.second} onChange={
+                        (eventObject) => {
+                            const data = eventObject.target.value
+                            if (data !== '')
+                                this.updateSecond(Number(data))
+                        }
+                    } />
+                </div>
+                <div>
+                    <button type="button" onClick={this.calculate}>Add</button>
+                </div>
+                <div>
+                    <label htmlFor="txtResult">Result: &nbsp; </label>
+                    <input type="text" id="txtResult" readOnly value={this.state.result} />
+                </div>
+            </form>
+        )
+        return design
+    }
 }
 
 export default Calculator

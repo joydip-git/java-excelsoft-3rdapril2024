@@ -90,6 +90,14 @@ const copy={...anilObj}
 const numbers = [1,2,3,4]
 const copyArr = [...numbers]
 
+Fragment: Lets you wrap multiple adjacent elements without an extra wrapper react node/element.
+
+import {Fragment} from 'react'
+<Fragment>
+	...
+	...
+</Fragment>
+
 
 
 
