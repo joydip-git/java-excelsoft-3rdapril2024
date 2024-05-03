@@ -6,8 +6,15 @@ const numbers = [1,2,3,4,5]
 
 const arr =numbers.map(
 		(element)=>{
-			return element*2;
+			return <span>{element*2}</span>;
 		}
 	)
 
+array of React Nodes/elements
+
+[<span>2</span>,<span>4</span>,<span>6</span>,<span>8</span>,<span>10</span>,]
+
+
+array of employee objects: id, name, salary
+[{id:1, name:'', salary:},{},{}]
 
