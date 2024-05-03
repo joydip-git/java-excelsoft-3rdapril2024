@@ -1,0 +1,13 @@
+how to display list React class/functional component?
+
+main.js file:
+
+const numbers = [1,2,3,4,5]
+
+const arr =numbers.map(
+		(element)=>{
+			return element*2;
+		}
+	)
+
+
