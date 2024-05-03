@@ -34,32 +34,3 @@ export default class ItemList extends Component {
         return design
     }
 }
-
-/*
-const ItemList = props => {
-    const names = ['anil', 'sunil', 'vinod']
-    const sortNamesHandler = () => {
-
-    }
-    const listItems =
-        names
-            .map(
-                (name) => {
-                    return <option><span>{name}</span></option>
-                }
-            )
-    const design = (
-        <>
-            <select>
-                <option selected disabled>--select--</option>
-                {listItems}
-            </select>
-            <br />
-            <button type='button' onClick={sortNamesHandler}>Sort Names</button>
-        </>
-    )
-    return design
-}
-
-export default ItemList
-*/
