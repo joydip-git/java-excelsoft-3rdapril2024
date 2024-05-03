@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.restapi.sample.models.dto.Employee;
+import com.restapi.sample.utility.DbQueries;
 import com.restapi.sample.utility.DbUtility;
 
 @Repository
@@ -26,7 +27,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 			connection = DbUtility.createConnection();
 
 			statement = connection.createStatement();
-			records = statement.executeQuery("select * from employees;");
+			records = statement.executeQuery(DbQueries.SELECT_ALL_QUERY);
 
 			if (records != null) {
 
@@ -67,7 +68,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 		try {
 			connection = DbUtility.createConnection();
 
-			statement = connection.prepareStatement("select * from employees where id=?;");
+			statement = connection.prepareStatement(DbQueries.SELECT_SINGLE_QUERY);
 			statement.setInt(1, id);
 			records = statement.executeQuery();
 
@@ -104,7 +105,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 		PreparedStatement statement = null;
 		try {
 			connection = DbUtility.createConnection();
-			statement = connection.prepareStatement("insert into employees(id,name,salary) values(?,?,?);");
+			statement = connection.prepareStatement(DbQueries.INSERT_QUERY);
 			statement.setInt(1, modelObject.getId());
 			statement.setString(2, modelObject.getName());
 			statement.setDouble(3, modelObject.getSalary());
@@ -133,7 +134,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 		PreparedStatement statement = null;
 		try {
 			connection = DbUtility.createConnection();
-			statement = connection.prepareStatement("update employees set name=?, salary=? where id=?;");
+			statement = connection.prepareStatement(DbQueries.UPDATE_QUERY);
 			statement.setString(1, modelObject.getName());
 			statement.setDouble(2, modelObject.getSalary());
 			statement.setInt(3, id);
@@ -159,7 +160,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 		PreparedStatement statement = null;
 		try {
 			connection = DbUtility.createConnection();
-			statement = connection.prepareStatement("delete from employees where id=?;");
+			statement = connection.prepareStatement(DbQueries.DELETE_QUERY);
 			statement.setInt(1, id);
 			return statement.executeUpdate();
 		} catch (ClassNotFoundException e) {
