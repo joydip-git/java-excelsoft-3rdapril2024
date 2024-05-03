@@ -18,3 +18,52 @@ array of React Nodes/elements
 array of employee objects: id, name, salary
 [{id:1, name:'', salary:},{},{}]
 
+
+array and object destructuring:
+ const anilObj = {
+        id: 1,
+        name: 'anil',
+        salary: 1000
+    }
+    //object destructuring
+    //const { name: name, salary: salary } = anilObj
+    const { name, salary } = anilObj
+
+    console.log(name, salary)
+
+    const numbers = [100, 200, 300, 400]
+    // const first = numbers[0]
+    // const thrird = numbers[2]
+    //array destructuring
+    const [first, , third,] = numbers
+    console.log(first, third)
+
+    // const idValue = anilObj.id
+    // const salaryValue = anilObj.salary
+    // const nameValue = anilObj.name
+
+Hooks or hook functions:
+useState(), useEffect(), useRef(), useContext() etc.
+
+Note: hook functions can be called from functional component ONLY
+
+ when you call useState() function, pass the initial data to be stored in the state
+ 
+ useState() hook does not restrict the type of state to Object only. the type of state could be anything (such as, number, string , boolean, object, array etc.)(compared to that, class component's state property MUST BE an OBJECT type)
+
+ you can create as many states as you want for a functional component using useState (compared to that, in class component only ONE STATE is possible, a big fat state object with all properties)
+
+ If you update the state here, the old state data is simple REPLACED, not MERGED, by the new state data (unlike class component's setState() method, which merges old and new state and preserves the old state property values which have not been updated)
+
+ useState() hook returns an array containing -
+	a. reference to the state data at the 1st position of the array
+	b. reference to a function to update that state data (like, setState function of class component), at the 2nd position of the array
+
+	const [stateVariableName,setStateVariableName]= useState(<initial-state-data>)
+	a. setStateVariableName(<new-state-data>)
+	b. setStateVariableName((<current-state-data-copy>)=>{ return <new state data>;})
+
+
+
+
+
