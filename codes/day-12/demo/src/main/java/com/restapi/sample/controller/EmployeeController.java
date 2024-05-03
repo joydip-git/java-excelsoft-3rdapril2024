@@ -31,6 +31,7 @@ public class EmployeeController {
 			throws ClassNotFoundException, SQLException {
 		try {
 			List<Employee> employeeRecords = _service.fetchRecords(sortChoice);
+			System.out.println("request came");
 			return ResponseEntity.ok(employeeRecords);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

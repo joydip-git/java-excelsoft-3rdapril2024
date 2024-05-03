@@ -7,7 +7,7 @@ import Axios from 'axios'
 
 const baseUrl = 'http://localhost:8001/employees'
 
-function getEmployees(sortChoice) {
+export function getEmployees(sortChoice) {
     //get() method sends the request to RESTful API asynchronously and the method returns a Promise object of type AxiosResponse (Promise<AxiosResponse>)
     return Axios.get(`${baseUrl}/sort/${sortChoice}`)
 }
@@ -15,23 +15,23 @@ function getEmployees(sortChoice) {
 
 //call RESTful API to get a single record of an employee
 //url: http://localhost:8001/employees/view/{eid} (GET)
-function getEmployee(id) {
+export function getEmployee(id) {
     return Axios.get(`${baseUrl}/view/${id}`)
 }
 //call RESTful API to pass a newly created employee data
 //so that it can saved in the database table
 //url: http://localhost:8001/employees/add (POST)
-function addEmployee(empObject) {
+export function addEmployee(empObject) {
     return Axios.post(`${baseUrl}/add`, empObject)
 }
 
 //call RESTful API to pass a newly updated an existing employee data so that it can updated also in the database table
 //url: http://localhost:8001/employees/update/{eid} (PUT)
-function updateEmployee(id, empObject) {
+export function updateEmployee(id, empObject) {
     return Axios.put(`${baseUrl}/update/${id}`, empObject)
 }
 //call RESTful API to delete an employee record from database tabke
 //url: http://localhost:8001/employees/delete/{eid} (DELETE)
-function deleteEmployee(id) {
+export function deleteEmployee(id) {
     return Axios.delete(`${baseUrl}/delete/${id}`)
 }
