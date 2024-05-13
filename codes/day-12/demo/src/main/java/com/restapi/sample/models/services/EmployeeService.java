@@ -76,12 +76,22 @@ public class EmployeeService implements ServiceContract<Employee, Integer> {
 	}
 
 	@Override
-	public Integer insertRecord(Employee modelObject) throws ClassNotFoundException, SQLException, Exception {
+	public Employee insertRecord(Employee modelObject) throws ClassNotFoundException, SQLException, Exception {
 		try {
 			if (modelObject == null)
 				throw new NullPointerException("employee object is NULL");
-			// modelObject.setId(0);
-			return _repository.addRecord(modelObject);
+			
+			List<Employee> records = _repository.getRecords();
+			Employee lastEmployee = records.get(records.size()-1);
+			System.out.println(modelObject);
+			System.out.println(lastEmployee);
+			modelObject.setId(lastEmployee.getId() + 1);
+			System.out.println(modelObject.getId());
+			int res = _repository.addRecord(modelObject);
+			if(res>0)
+				return modelObject;
+			else
+				return null;
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 			throw e;
@@ -98,7 +108,7 @@ public class EmployeeService implements ServiceContract<Employee, Integer> {
 	}
 
 	@Override
-	public Integer modifyRecord(Integer id, Employee modelObject)
+	public Employee modifyRecord(Integer id, Employee modelObject)
 			throws ClassNotFoundException, SQLException, Exception {
 		try {
 			if (modelObject == null)
@@ -107,7 +117,11 @@ public class EmployeeService implements ServiceContract<Employee, Integer> {
 			if (id <= 0)
 				throw new IllegalArgumentException("the employee id should be greater than zero");
 
-			return _repository.updateRecord(id, modelObject);
+			int res = _repository.updateRecord(id, modelObject);
+			if(res>0)
+				return modelObject;
+			else
+				return null;
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			throw e;

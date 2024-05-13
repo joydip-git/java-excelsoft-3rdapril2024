@@ -1,0 +1,32 @@
+Common:
+	Home
+	DashBoard
+	PageNotFound
+
+Employee:
+	EmployeeList
+	EmployeeDetail
+	AddEmployee
+	UpdateEmployee
+	Filter
+
+http://localhost:3000 or http://localhost:3000/home => Home
+
+http://localhost:3000/employees => EmployeeList (nested => 	Filter)
+http://localhost:3000/employees/view/{eid} => EmployeeDetail
+http://localhost:3000/employees/update/{eid} => UpdateEmployee
+http://localhost:3000/employees/add => AddEmployee
+
+import {BrowserRouter as Router} from ''
+React Router
+	=>	BrowserRouter =< fetches that information
+	=> HashRouter
+	=> MemoryRouter
+
+HTML 5 => HTML 5 + JS 5 + CSS 3
+pushState()
+
+
+amazon.in/categories/mobiles/samsung?mobileType=
+amazon.in/categories/mobiles/samsung?mobileType=
+

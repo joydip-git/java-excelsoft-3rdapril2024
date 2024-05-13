@@ -110,6 +110,7 @@ public class EmployeeRepository implements RepositoryContract<Employee, Integer>
 			statement.setString(2, modelObject.getName());
 			statement.setDouble(3, modelObject.getSalary());
 			int res = statement.executeUpdate();
+			System.out.println("Repo: " + res);
 			return res;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

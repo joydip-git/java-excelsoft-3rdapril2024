@@ -1,5 +1,6 @@
 package com.restapi.sample.controller;
 
+import java.net.URI;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +34,7 @@ public class EmployeeController {
 			List<Employee> employeeRecords = _service.fetchRecords(sortChoice);
 			System.out.println("request came");
 			return ResponseEntity.ok(employeeRecords);
+			// return new ResponseEntity<List<Employee>>(employeeRecords, HttpStatus.FOUND);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -46,14 +48,16 @@ public class EmployeeController {
 	}
 
 	@PostMapping(path = "/employees/add")
-	public ResponseEntity<Integer> addEmployee(@RequestBody Employee employee)
+	@CrossOrigin(origins = "*")
+	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee)
 			throws ClassNotFoundException, SQLException, Exception {
 		try {
-			int res = _service.insertRecord(employee);
-			if (res > 0) {
-				return ResponseEntity.of(Optional.of(res)).status(HttpStatus.CREATED).build();
+			Employee res = _service.insertRecord(employee);
+			System.out.println("Repo: " + res);
+			if (res != null) {
+				return new ResponseEntity<Employee>(res, HttpStatus.CREATED);
 			} else {
-				return ResponseEntity.of(Optional.empty()).status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 			}
 		} catch (
 
@@ -71,14 +75,17 @@ public class EmployeeController {
 	}
 
 	@PutMapping(path = "/employees/update/{eid}")
-	public ResponseEntity<Integer> updateEmployee(@RequestBody Employee employee, @PathVariable("eid") int id)
+	@CrossOrigin(origins = "*")
+	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee, @PathVariable("eid") int id)
 			throws ClassNotFoundException, SQLException, Exception {
 		try {
-			int res = _service.modifyRecord(id, employee);
-			if (res > 0) {
-				return ResponseEntity.of(Optional.of(res)).status(HttpStatus.CREATED).build();
+			Employee res = _service.modifyRecord(id, employee);
+			if (res != null) {
+				// return
+				// ResponseEntity.of(Optional.of(res)).status(HttpStatus.CREATED).build();
+				return new ResponseEntity<Employee>(res, HttpStatus.OK);
 			} else {
-				return ResponseEntity.of(Optional.empty()).status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -111,7 +118,7 @@ public class EmployeeController {
 			return ResponseEntity.internalServerError().build();
 		}
 	}
-	
+
 	@DeleteMapping(path = "/employees/delete/{eid}")
 	@CrossOrigin(origins = "*")
 	public ResponseEntity<Integer> deleteEmplpoyeeById(@PathVariable("eid") int eid)
