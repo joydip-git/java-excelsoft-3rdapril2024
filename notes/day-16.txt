@@ -1,0 +1,78 @@
+React JS:
+	Lifecycle of components => class
+	useEffect hook
+	form data
+
+class X extends Component{
+	constructor(props){
+		super(props)
+	}
+	render(){
+		return <div></div>;
+	}
+}
+
+function App(){
+	const messageValue = "welcome";
+
+	const xComp = new X({message:"welcome"})
+	const xCompDesign = xComp.render()
+	
+	return (
+		<div>
+			{/* <X message={messageValue}/> */}
+			{ xCompDesign }
+		</div>
+	)
+}
+
+
+lifecycle of class component:
+a. mounting
+		i. constructor gets called, component instance is created
+		Note: DO NOT write any side-effect causing code here
+
+		ii. component's render method is called and a returns a react element
+		Note: DO NOT write any side-effect causing code here directly
+
+		iii. component's react element is mounted (displayed in the browser)
+				and immediately "didMount" event gets fired. hadle that event using "componentDidMount" method. this event is fired ONLY ONCE, the very first time the class component instance is created and render method gets called and then the component design is dispalyed in the browser. this event does not happen any more during the lifecycle.
+		Note: write any side-effect causing code here directly (but for one time only kind of side-effect causing code)
+		
+b. update
+	when components is updated then one more event is fired, which can be handled using "componentDidUpdate" method. this event (update) gets fired every time the component is updated and that method gets called, too, every time.
+		Note: write any side-effect causing code here directly (this will be executed everytime is not stopped)
+
+	a class componet gets updated, because
+	1. its own state got updated
+	2. its parent component has sent a new property object with new propertu data to this nested class component
+
+	the class component SHOULD  NOT BE UPDATED UNNECESSARILY if
+	1. the class component's state is updated but with same old value
+	2. the class component receives a property object from parent with the same old property value
+
+	for this React JS provides another method "shouldComponentUpdate" for class components
+	this method is called from the 2nd cycle onwards (not the very first time - during mounting) every time
+	this method is called before "render" and any other lifecycle methods
+	this method returns boolean. if it returns true, then render and other lifecycle methods happen or else if it returns false, those methods do not get called
+
+	order:
+	i. shouldComponentUpdate
+	ii. render
+	iii. componentDidUpdate
+	
+
+
+c. error
+
+d. destroy
+	if parent component is unmounted, then the nested class component is alos unmounted and component instance is destroyed. when the class component is unmounted from browser, then an event gets fired "willUnmount", and this event can be handled by using "componentWillUnmount" method.
+
+
+
+
+
+
+
+
+
