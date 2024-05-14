@@ -1,9 +1,8 @@
 const { legacy_createStore, applyMiddleware } = require('redux')
 const { createLogger } = require('redux-logger')
 
-const initialState = {
-    count: 0,
-    //todoList: [{id:1, task:'', completed:false}]
+const initialCountState = {
+    count: 0
 }
 
 const actionTypes = {
@@ -11,7 +10,7 @@ const actionTypes = {
     DECREASE: 'DECREASE'
 }
 
-const countReducer = (currentState = initialState, action) => {
+const countReducer = (currentState = initialCountState, action) => {
 
     let newState
 
