@@ -1,2 +1,4 @@
 1. forms
 2. redux
+
+mutate the state, not directly, but indirectly (immutably)
