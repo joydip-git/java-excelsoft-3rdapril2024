@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const EmployeeCard = props => {
     const { employee, deleteHandlerFn } = props
+    const navigate = useNavigate()
 
     return (
         <div style={{ display: 'flex' }}>
@@ -25,6 +26,12 @@ const EmployeeCard = props => {
                         () => { deleteHandlerFn(employee.id) }
                     }>
                         Delete
+                    </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type='button' className='btn btn-danger' onClick={
+                        () => { navigate(`/employees/update/${employee.id}`) }
+                    }>
+                        Edit
                     </button>
                 </div>
             </div>
