@@ -1,0 +1,10 @@
+package com.springboot_hibernate.studentserviceapp.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "courses")
+public class Course {
+
+}

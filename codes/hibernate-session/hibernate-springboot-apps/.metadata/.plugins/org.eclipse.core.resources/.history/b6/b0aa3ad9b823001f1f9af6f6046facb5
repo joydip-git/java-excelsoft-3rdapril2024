@@ -1,0 +1,69 @@
+package com.springboot_hibernate.studentserviceapp.entities;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "students")
+public class Student {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(name = "stuent_name")
+	private String name;
+	
+	@Column(name = "student_marks")
+	private double marks;
+	
+	@ManyToMany
+	private List<Course> courses;
+
+	public Student() {
+		super();
+	}
+
+	public Student(int id, String name, double marks, List<Course> courses) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.marks = marks;
+		this.courses = courses;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getMarks() {
+		return marks;
+	}
+
+	public void setMarks(double marks) {
+		this.marks = marks;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+	}
+}

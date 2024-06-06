@@ -1,0 +1,19 @@
+package com.springboot_hibernate.studentserviceapp;
+
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.springboot_hibernate.studentserviceapp.repository.StudentRepository;
+
+@SpringBootApplication
+public class StudentserviceappApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(StudentserviceappApplication.class, args);
+		StudentRepository repo = context.getBean(StudentRepository.class);
+	}
+}

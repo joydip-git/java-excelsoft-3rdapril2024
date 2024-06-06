@@ -1,0 +1,5 @@
+package com.springboot_hibernate.studentserviceapp.repository;
+
+public interface StudentCourseRepository {
+
+}

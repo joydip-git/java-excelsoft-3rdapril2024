@@ -1,0 +1,30 @@
+JDBC:
+	load driver manager class
+	create connection - uname pwd url-for-db
+	create command/statement
+	execute query
+	close connection
+
+OR/M tool: Object relational mapping tool
+
+mysql connector driver
+hibernate-core
+	SessionFactory => factory to create a Session object
+								this session object creates a session between your application and the database
+
+	Session => persist (old -> save)
+
+	session.close()
+
+
+xml configuration file for hibernate:
+name: hibernate.cfg.xml
+
+
+authors: id (pk), author_name, books_published
+books: id (pk), book_name, author_id (fk -> pk [id] of authors )
+
+
+
+	
+	

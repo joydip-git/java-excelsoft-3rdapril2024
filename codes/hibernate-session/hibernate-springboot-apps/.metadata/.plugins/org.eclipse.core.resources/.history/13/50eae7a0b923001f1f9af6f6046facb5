@@ -1,0 +1,13 @@
+package com.springboot_hibernate.studentserviceapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class StudentserviceappApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudentserviceappApplication.class, args);
+	}
+
+}
